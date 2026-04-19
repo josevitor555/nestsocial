@@ -1,21 +1,26 @@
 # Compiled output
-/dist
-/node_modules
+**/dist/
+node_modules/
+**/node_modules/
 
 # Environment variables
 .env
 config/.env
+**/config/.env
+**/.env
 *.env
 
 # NestJS specific
-/npm-debug.log
-/yarn-error.log
-/lerna-debug.log
+**/npm-debug.log
+**/yarn-error.log
+**/lerna-debug.log
 .nestcli.json
 
 # IDEs and editors
-/.idea
-/.vscode
+.idea/
+.vscode/
+**/ .idea/
+**/ .vscode/
 *.suo
 *.ntvs*
 *.njsproj
@@ -27,5 +32,6 @@ config/.env
 Thumbs.db
 
 # Project specific
-/src/database/config_start.txt
+**/config_start.txt
 backend.txt
+example.http
