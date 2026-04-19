@@ -1,0 +1,31 @@
+# Compiled output
+/dist
+/node_modules
+
+# Environment variables
+.env
+config/.env
+*.env
+
+# NestJS specific
+/npm-debug.log
+/yarn-error.log
+/lerna-debug.log
+.nestcli.json
+
+# IDEs and editors
+/.idea
+/.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# OS specific files
+.DS_Store
+Thumbs.db
+
+# Project specific
+/src/database/config_start.txt
+backend.txt

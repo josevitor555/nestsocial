@@ -1,0 +1,45 @@
+@baseUrl = http://localhost:3000
+
+### Testar a Rota Base
+GET {{baseUrl}}
+
+### Registrar um Novo Usuário
+POST {{baseUrl}}/auth/register
+Content-Type: application/json
+
+{
+  "name": "Jane Doe",
+  "email": "jane@example.com",
+  "password": "strongpassword123"
+}
+
+### Realizar Login
+# @name login
+POST {{baseUrl}}/auth/login
+Content-Type: application/json
+
+{
+  "email": "jane@example.com",
+  "password": "strongpassword123"
+}
+
+### Obter Perfil do Usuário Autenticado
+@authToken = {{login.response.body.access_token}}
+
+GET {{baseUrl}}/auth/me
+Authorization: Bearer {{authToken}}
+
+### Deletar Minha Conta
+DELETE {{baseUrl}}/auth/me
+Authorization: Bearer {{authToken}}
+
+### Atualizar Meu Perfil
+PATCH {{baseUrl}}/auth/me
+Content-Type: application/json
+Authorization: Bearer {{authToken}}
+
+{
+  "name": "Jane Doe Updated",
+  "email": "jane_new@example.com"
+}
+

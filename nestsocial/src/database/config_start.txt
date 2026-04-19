@@ -1,0 +1,3 @@
+username: koservitor123_db_user
+password: crTcN0PROedGkI9D
+Connection String: mongodb+srv://koservitor123_db_user:<db_password>@nestsocial.xyj05nt.mongodb.net/?appName=NestSocial
