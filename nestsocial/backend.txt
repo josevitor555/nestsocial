@@ -1,0 +1,66 @@
+backend/
+├─ src/
+│  ├─ auth/
+│  │  ├─ dto/
+│  │  │  ├─ login.dto.ts
+│  │  │  └─ register.dto.ts
+│  │  ├─ guards/
+│  │  │  └─ jwt-auth.guard.ts
+│  │  ├─ strategies/
+│  │  │  └─ jwt.strategy.ts
+│  │  ├─ auth.controller.ts
+│  │  ├─ auth.service.ts
+│  │  └─ auth.module.ts
+│  │
+│  ├─ users/
+│  │  ├─ dto/
+│  │  │  ├─ create-user.dto.ts
+│  │  │  └─ update-user.dto.ts
+│  │  ├─ schemas/
+│  │  │  └─ user.schema.ts
+│  │  ├─ users.controller.ts
+│  │  ├─ users.service.ts
+│  │  └─ users.module.ts
+│  │
+│  ├─ posts/
+│  │  ├─ dto/
+│  │  │  ├─ create-post.dto.ts
+│  │  │  └─ update-post.dto.ts
+│  │  ├─ schemas/
+│  │  │  └─ post.schema.ts
+│  │  ├─ posts.controller.ts
+│  │  ├─ posts.service.ts
+│  │  └─ posts.module.ts
+│  │
+│  ├─ storage/
+│  │  ├─ storage.service.ts
+│  │  └─ storage.module.ts
+│  │
+│  ├─ common/
+│  │  ├─ decorators/
+│  │  │  └─ current-user.decorator.ts
+│  │  ├─ filters/
+│  │  │  └─ http-exception.filter.ts
+│  │  ├─ interceptors/
+│  │  │  └─ response.interceptor.ts
+│  │  ├─ pipes/
+│  │  │  └─ zod-validation.pipe.ts
+│  │  └─ types/
+│  │     └─ express-request.interface.ts
+│  │
+│  ├─ config/
+│  │  ├─ env.schema.ts
+│  │  └─ configuration.ts
+│  │
+│  ├─ database/
+│  │  ├─ database.module.ts
+│  │  └─ database.service.ts
+│  │
+│  ├─ app.module.ts
+│  └─ main.ts
+│
+├─ .env
+├─ .env.example
+├─ package.json
+├─ tsconfig.json
+└─ nest-cli.json

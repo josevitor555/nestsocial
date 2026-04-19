@@ -1,19 +1,24 @@
-import { Controller, Post, Body, UnauthorizedException, HttpCode, HttpStatus, Get, Request, UseGuards, Delete, Patch } from '@nestjs/common';
+import { Controller, Post, Body, UnauthorizedException, HttpCode, HttpStatus, Get, Request, UseGuards, Delete, Patch, UsePipes } from '@nestjs/common';
 import { AuthService } from './auth.service';
 import { JwtAuthGuard } from './guards/jwt-auth.guard';
+import { ZodValidationPipe } from '../common/pipes/zod-validation.pipe';
+import { CreateUserSchema, LoginSchema, UpdateUserSchema } from '../users/validations/user.validation';
+import type { CreateUserDto, LoginDto, UpdateUserDto } from '../users/validations/user.validation';
 
 @Controller('auth')
 export class AuthController {
   constructor(private authService: AuthService) { }
 
   @Post('register')
-  async register(@Body() body: any) {
+  @UsePipes(new ZodValidationPipe(CreateUserSchema))
+  async register(@Body() body: CreateUserDto) {
     return this.authService.register(body);
   }
 
   @HttpCode(HttpStatus.OK)
   @Post('login')
-  async login(@Body() body: any) {
+  @UsePipes(new ZodValidationPipe(LoginSchema))
+  async login(@Body() body: LoginDto) {
     const user = await this.authService.validateUser(body.email, body.password);
     if (!user) {
       throw new UnauthorizedException('Credenciais inválidas');
@@ -39,7 +44,8 @@ export class AuthController {
 
   @UseGuards(JwtAuthGuard)
   @Patch('me')
-  async updateAccount(@Request() req: any, @Body() body: any) {
+  @UsePipes(new ZodValidationPipe(UpdateUserSchema))
+  async updateAccount(@Request() req: any, @Body() body: UpdateUserDto) {
     return this.authService.updateAccount(req.user.userId, body);
   }
 }
