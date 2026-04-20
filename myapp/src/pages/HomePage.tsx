@@ -1,8 +1,15 @@
+// App Layout
+import AppLayout from '../components/layout/AppLayout';
+import FeedColumn from '../components/layout/FeedColumn';
+
+// App style
+import '../App.css';
+
 const Home = () => {
     return (
-        <div className="bg-background">
-            <h1>Home</h1>
-        </div>
+        <AppLayout>
+            <FeedColumn />
+        </AppLayout>
     )
 }
 

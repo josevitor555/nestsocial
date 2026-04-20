@@ -97,12 +97,12 @@ export default function LoginPage() {
                     {/* Brand/Logo */}
                     <div className="flex items-center gap-3 mb-16">
                         <BrandLogo size={40} />
-                        <span className="text-2xl font-bold tracking-tight text-foreground">NestSocial</span>
+                        <span className="text-2xl font-semibold text-foreground">NestSocial</span>
                     </div>
 
                     {/* Welcome Copy */}
                     <div className="mb-10">
-                        <h1 className="mb-3 text-4xl font-semibold tracking-tight text-foreground">
+                        <h1 className="mb-3 text-4xl font-semibold text-foreground">
                             <span className='font-light'>Hello</span>,<br />Welcome Back
                         </h1>
                         <p className="text-base font-medium text-white/80">

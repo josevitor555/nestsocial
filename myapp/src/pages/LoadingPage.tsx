@@ -16,7 +16,7 @@ const LoadingPage = () => {
                     <BrandLogo size={90} />
 
                     <div className="flex flex-col items-center gap-2 text-center">
-                        <h2 className="text-2xl font-semibold tracking-tight text-foreground transition-all duration-700 animate-in fade-in slide-in-from-bottom-4">
+                        <h2 className="text-2xl font-semibold text-foreground transition-all duration-700 animate-in fade-in slide-in-from-bottom-4">
                             NestSocial
                         </h2>
                         <p className="text-base font-medium text-muted-foreground/60 animate-in fade-in slide-in-from-bottom-2 delay-300">
