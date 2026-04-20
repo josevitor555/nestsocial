@@ -43,3 +43,31 @@ Authorization: Bearer {{authToken}}
   "email": "jane_new@example.com"
 }
 
+### Criar um Post
+POST {{baseUrl}}/posts
+Content-Type: application/json
+Authorization: Bearer {{authToken}}
+
+{
+  "content": "Olá, este é o meu primeiro post na NestSocial! 🚀"
+}
+
+### Listar Todos os Posts (Feed)
+GET {{baseUrl}}/posts
+
+### Obter um Post Específico
+@postId = COLOQUE_O_ID_AQUI
+GET {{baseUrl}}/posts/{{postId}}
+
+### Atualizar um Post
+PATCH {{baseUrl}}/posts/{{postId}}
+Content-Type: application/json
+Authorization: Bearer {{authToken}}
+
+{
+  "content": "Este post foi editado com sucesso! ✨"
+}
+
+### Deletar um Post
+DELETE {{baseUrl}}/posts/{{postId}}
+Authorization: Bearer {{authToken}}

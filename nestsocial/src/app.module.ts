@@ -7,6 +7,8 @@ import { UsersModule } from './users/users.module';
 import { AuthModule } from './auth/auth.module';
 import configuration from './config/configuration';
 import { validate } from './config/env.schema';
+import { PostsModule } from './posts/posts.module';
+
 
 @Module({
   imports: [
@@ -26,6 +28,8 @@ import { validate } from './config/env.schema';
     }),
     UsersModule,
     AuthModule,
+    PostsModule,
+
   ],
   controllers: [AppController],
   providers: [AppService],
