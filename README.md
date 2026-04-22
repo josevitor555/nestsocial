@@ -78,37 +78,7 @@ nestsocial_project/
     └── ...
 ```
 
-## Getting Started
-
-### Prerequisites
-
-- Node.js (v18+)
-- MongoDB (Running locally or on Atlas)
-- npm or yarn
-
-### Installation
-
-1. **Clone the repository**
-   ```bash
-   cd nestsocial_project
-   ```
-
-2. **Setup Backend**
-   ```bash
-   cd nestsocial
-   npm install
-   # Create a .env file with your MONGO_URI and JWT_SECRET
-   npm run start:dev
-   ```
-
-3. **Setup Frontend**
-   ```bash
-   cd ../myapp
-   npm install
-   npm run dev
-   ```
-
-## Connect with Us
+## Connect with me
 
 Stay updated on the latest AI developments and community insights:
 - **Instagram**: [@synk.social](https://www.instagram.com/synk.social/)
