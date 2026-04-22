@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
-import { Image, Video, Send, Sparkles, ShieldCheck, Mic, FileText } from 'lucide-react';
+import { Image, Video, Send, ShieldCheck, Mic, FileText } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import BrandLogo from '@/components/styled-components/BrandLogo';
 import { cn } from '@/lib/utils';
 
 const CreatePost = () => {
@@ -62,7 +63,7 @@ const CreatePost = () => {
                 size="sm"
                 className="w-fit text-xs font-bold gap-2 text-primary/70 hover:text-primary hover:bg-primary/10 rounded-xl px-3 transition-all duration-300"
               >
-                <Sparkles className="w-4 h-4" />
+                <BrandLogo size={16} />
                 Ask To Your Agent
               </Button>
             </div>

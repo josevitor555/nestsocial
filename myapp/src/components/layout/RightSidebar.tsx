@@ -8,9 +8,12 @@ import {
     ExternalLink,
     MessageSquare,
     Heart,
-    UserPlus
+    UserPlus,
+    Bot,
+    Zap
 } from 'lucide-react';
 import type { ActivityItem, AIInteraction, TrendingInsight, Suggestion } from '@/types/sidebar';
+import CreateYourAgent from '@/components/ui/CreateYourAgent';
 
 const MOCK_ACTIVITIES: ActivityItem[] = [
     { id: '1', type: 'like', actor: { name: 'Sarah Chen', isAI: false }, description: 'liked your post', createdAt: '2m' },
@@ -48,8 +51,32 @@ const SidebarSection = ({ title, icon: Icon, children }: { title: string, icon: 
 );
 
 const RightSidebar = () => {
+    const [isCreateModalOpen, setIsCreateModalOpen] = React.useState(false);
+
     return (
         <aside className="w-full sticky top-8 h-fit flex flex-col gap-12 self-start overflow-y-auto scrollbar-hide pb-20">
+
+            {/* 0. Create Agent CTA */}
+            <div className="relative group p-6 rounded-[2.5rem] bg-linear-to-br from-primary/20 via-primary/5 to-transparent border border-primary/20 overflow-hidden cursor-pointer hover:border-primary/40 transition-all duration-500 shadow-xl shadow-primary/5 active:scale-[0.98]" onClick={() => setIsCreateModalOpen(true)}>
+                <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+                    <Bot className="w-20 h-20 text-primary rotate-12" />
+                </div>
+                <div className="relative z-10 space-y-4">
+                    <div className="w-12 h-12 rounded-2xl bg-primary flex items-center justify-center text-primary-foreground shadow-lg shadow-primary/20 group-hover:scale-110 transition-transform duration-500">
+                        <Plus className="w-6 h-6" />
+                    </div>
+                    <div>
+                        <h2 className="text-xl font-bold tracking-tight mb-1">Create Your Agent</h2>
+                        <p className="text-base text-muted-foreground leading-relaxed italic">"The future of social is synthetic."</p>
+                    </div>
+                    <div className="flex items-center gap-2 pt-2 text-primary font-bold text-base">
+                        <span>Initialize Protocol</span>
+                        <Zap className="w-4 h-4 animate-pulse" />
+                    </div>
+                </div>
+            </div>
+
+            <CreateYourAgent isOpen={isCreateModalOpen} onClose={() => setIsCreateModalOpen(false)} />
 
             {/* 1. Activity Stream */}
             <SidebarSection title="Activity Stream" icon={History}>
@@ -116,8 +143,8 @@ const RightSidebar = () => {
                     <div key={suggestion.id} className="flex items-center gap-4 p-3 group cursor-pointer rounded-2xl hover:bg-secondary/20 transition-all">
                         <img src={suggestion.avatar} alt={suggestion.name} className="w-11 h-11 rounded-2xl border border-border/50 group-hover:scale-105 transition-transform" />
                         <div className="flex-1 min-w-0">
-                            <h4 className="text-[13px] font-bold truncate group-hover:text-primary transition-colors">{suggestion.name}</h4>
-                            <p className="text-[11px] text-muted-foreground truncate">{suggestion.description}</p>
+                            <h4 className="text-base font-semibold group-hover:text-primary transition-colors">{suggestion.name}</h4>
+                            <p className="text-xm text-muted-foreground truncate">{suggestion.description}</p>
                         </div>
                         <button className="p-2 rounded-xl bg-secondary/50 text-muted-foreground hover:bg-primary hover:text-primary-foreground transition-all">
                             {suggestion.type === 'community' ? <Plus className="w-4 h-4" /> : <UserPlus className="w-4 h-4" />}
