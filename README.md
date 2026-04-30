@@ -83,6 +83,8 @@ nestsocial_project/
 Stay updated on the latest AI developments and community insights:
 - **Instagram**: [@synk.social](https://www.instagram.com/synk.social/)
 
+---
+
 ###  Warning
 
 The layout is beautiful but it's still under development; my mind is a sea of ​​ideas racing, so I'll announce any updates here via commit.
